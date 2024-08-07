@@ -1,0 +1,12 @@
+name: Reusable Workflow 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger_hello_world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Hello World Workflow
+        uses: timothywarner-org/.github/.github/workflow-templates/hello-world-shared.yml@main
