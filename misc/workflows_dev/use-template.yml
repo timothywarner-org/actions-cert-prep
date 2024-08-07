@@ -1,0 +1,9 @@
+name: use-template
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  call-template:
+    uses: timothywarner/.github/.github/workflows/template-artifact.yml@main

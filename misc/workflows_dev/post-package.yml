@@ -1,0 +1,17 @@
+name: post-package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-production:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Call Packaging Template
+        uses: timothywarner/.github/.github/workflows/hello-world-package.yml@main
