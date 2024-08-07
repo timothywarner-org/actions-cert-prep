@@ -23,11 +23,11 @@ jobs:
       # Organization name containing the reusable workflow
       owner: timothywarner-org
       # Repository containing the reusable workflow
-      repo: actions-cert-prep
+      repo: .github  # Updated repository to .github
       # Path and name of the reusable workflow file
-      workflow_file_name: .github/workflows/reusable-workflow1.yml
+      workflow_file_name: workflows/reusable-workflow1.yml  # Updated path
 
       # Optional: Pass input values to the reusable workflow
       # In this case, we pass the organization and template name to the reusable workflow
       ref: main
-      inputs: '{"org": "timothywarner-org", "template": ".github/workflow-templates/hello-world-shared.yml"}'
+      inputs: '{"org": "timothywarner-org", "template": "workflow-templates/hello-world-shared.yml"}' # Updated template path
