@@ -1,12 +1,33 @@
-name: Reusable Workflow 1
+# Workflow Name
+name: Trigger Reusable Workflow
 
+# Trigger Events
 on:
+  # Run when changes are pushed to the 'main' branch
+  push:
+    branches:
+      - main
+
+  # Allow manual triggering through the GitHub Actions UI
   workflow_dispatch:
 
+# Jobs to Execute
 jobs:
-  trigger_hello_world:
-    runs-on: ubuntu-latest
+  # Call Reusable Workflow Job
+  call_reusable_workflow:
+    # Use the official 'reusable workflow' action
+    uses: github/workflows/call-reusable-workflow@v1
 
-    steps:
-      - name: Trigger Hello World Workflow
-        uses: timothywarner-org/.github/workflow-templates/hello-world-shared.yml@main
+    # Workflow Configuration
+    with:
+      # Organization name containing the reusable workflow
+      owner: timothywarner-org
+      # Repository containing the reusable workflow
+      repo: actions-cert-prep
+      # Path and name of the reusable workflow file
+      workflow_file_name: .github/workflows/reusable-workflow1.yml
+
+      # Optional: Pass input values to the reusable workflow
+      # In this case, we pass the organization and template name to the reusable workflow
+      ref: main
+      inputs: '{"org": "timothywarner-org", "template": ".github/workflow-templates/hello-world-shared.yml"}'
