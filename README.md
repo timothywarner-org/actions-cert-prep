@@ -28,7 +28,6 @@
 - [GitHub Actions documentation](https://docs.github.com/actions)
 - [GitHub Actions pricing](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions)
 - [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
-- [Awesome Actions](https://github.com/sdras/awesome-actions)
 
 ## GitHub Actions training
 
