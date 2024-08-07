@@ -30,7 +30,7 @@
 - [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
 - [Awesome Actions](https://github.com/sdras/awesome-actions)
 
-## GitHub Actions training and certification
+## GitHub Actions training
 
 - [GitHub Actions training collection @ Microsoft Learn](https://learn.microsoft.com/en-us/collections/n5p4a5z7keznp5)
 - [Introduction to GitHub Actions - Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-actions/)
