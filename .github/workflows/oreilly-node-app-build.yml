@@ -1,0 +1,50 @@
+name: OReilly Test and Build Node App Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./node-app
+
+      - name: Run tests
+        run: npm test
+        working-directory: ./node-app
+
+      - name: Build app
+        run: npm run build
+        working-directory: ./node-app
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-app-build
+          path: ./node-app/dist
+
+  download:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app-build
+          path: ./node-app/dist
+
+      - name: Display artifact contents
+        run: ls -la ./node-app/dist

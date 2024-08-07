@@ -1,4 +1,4 @@
-name: O'Reilly Artifact Demo
+name: O'Reilly Artifact Demo Test
 
 on:
   push:
