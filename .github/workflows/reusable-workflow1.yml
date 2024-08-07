@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: Trigger Hello World Workflow
-        uses: timothywarner-org/.github/.github/workflow-templates/hello-world-shared.yml@main
+        uses: timothywarner-org/.github/workflow-templates/hello-world-shared.yml@main
